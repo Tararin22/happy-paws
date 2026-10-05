@@ -1,19 +1,13 @@
-﻿from app.repositories.pet_repository import add_pet
+﻿from app.services.pet_service import delete_pet_service
 
 
 def main():
     print("🐾 Happy Paws Pet Hotel")
     print("------------------------")
 
-    new_pet_id = add_pet(
-        "Buddy",
-        "Dog",
-        "Beagle",
-        2,
-        "Anan",
-    )
+    rows_deleted = delete_pet_service(10)
 
-    print(f"New pet added with ID: {new_pet_id}")
+    print(f"Rows deleted: {rows_deleted}")
 
 
 if __name__ == "__main__":
