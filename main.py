@@ -1,11 +1,19 @@
-﻿from app.database.connection import get_connection
+﻿from app.repositories.pet_repository import add_pet
 
 
 def main():
     print("🐾 Happy Paws Pet Hotel")
-    connection = get_connection()
-    print("Connected to MariaDB successfully!")
-    connection.close()
+    print("------------------------")
+
+    new_pet_id = add_pet(
+        "Buddy",
+        "Dog",
+        "Beagle",
+        2,
+        "Anan",
+    )
+
+    print(f"New pet added with ID: {new_pet_id}")
 
 
 if __name__ == "__main__":
